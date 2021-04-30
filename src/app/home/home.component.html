@@ -1,0 +1,26 @@
+﻿<!--<div class="p-4">-->
+<!--  <div class="container">-->
+<!--    <h1>Hi {{user.firstName}}!</h1>-->
+<!--    <p>You're logged in with Angular 9!!</p>-->
+<!--    <p><a routerLink="/users">Manage Users</a></p>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+  <div class="col" *ngFor="let product of products">
+    <div class="card" style="margin: 0.5rem">
+      <div class="card-header">
+        {{product.productPrice | currency:' R'}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{product.productName}}</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <button class="btn btn-outline-success" type="button" id="{{product.id}}" (click)="test($event)">ADD TO CART</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
