@@ -5,12 +5,12 @@ import {AccountService, AlertService, ProductService} from '@app/@services';
 import {Product} from '@app/@models/product';
 import {Observable, Subscription} from 'rxjs';
 import {InvocationContext} from '@app/@models/invocationContext';
-
+// import { BsModalService, BsModalRef } from
+// import {CartModule} from '@app/cart/cart.module';
 @Component({templateUrl: 'home.component.html'})
 export class HomeComponent {
   user: User;
   products: Product[];
-
   constructor(
     private accountService: AccountService,
     private productService: ProductService,
@@ -28,7 +28,10 @@ export class HomeComponent {
       });
   }
 
-  test(e: any) {
-    console.log(e.target.id);
+  openModal(e: any) {
+    // // tslint:disable-next-line:no-unused-expression
+    // CartModule.
+    // this.bsModalRef = this.modalService.show();
+    // console.log(e.target.id);
   }
 }

@@ -1,26 +1,16 @@
-﻿<!--<div class="p-4">-->
-<!--  <div class="container">-->
-<!--    <h1>Hi {{user.firstName}}!</h1>-->
-<!--    <p>You're logged in with Angular 9!!</p>-->
-<!--    <p><a routerLink="/users">Manage Users</a></p>-->
-<!--  </div>-->
-<!--</div>-->
-
-
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col" *ngFor="let product of products">
-    <div class="card h-100" style="margin: 0.5rem; ">
+﻿<div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 1rem">
+  <div class="col" *ngFor="let product of products" style="margin-bottom: 1rem">
+    <div class="card" style="height: 15rem">
       <div class="card-header">
         {{product.productPrice | currency:' R'}}
       </div>
-      <div class="card-body">
+      <div class="card-body h-100" style="display: grid">
         <h5 class="card-title">{{product.productName}}</h5>
-        <p class="card-text">{{product.description}}</p>
-        <div class="card-footer">
-          <button class="btn btn-outline-success" type="button" id="{{product.id}}" (click)="test($event)">ADD TO CART</button>
+        <p class="card-text">{{product.discription}}</p>
+        <div class="card-footer" style="height: 4rem">
+          <button class="btn btn-outline-success" type="button" id="{{product.id}}" (click)="openModal($event)">ADD TO CART</button>
         </div>
       </div>
     </div>
   </div>
-
 </div>

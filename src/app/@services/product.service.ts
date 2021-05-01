@@ -20,7 +20,19 @@ export class ProductService {
     return this.http.get(`${environment.apiUrl}/product/fetchAllProduct`);
   }
 
+  getProductById(id) {
+    return this.http.get(`${environment.apiUrl}/product/fetchProductById?id=${id}`);
+  }
+
   addProduct(product) {
     return this.http.post(`${environment.apiUrl}/product/insertProduct`, product);
+  }
+
+  updateProduct(product) {
+    return this.http.put(`${environment.apiUrl}/product/updateProduct`, product);
+  }
+
+  deleteProduct(id: string) {
+    return this.http.delete(`${environment.apiUrl}/product/deleteProductById/?id=${id}`);
   }
 }

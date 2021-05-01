@@ -4,5 +4,6 @@ export class Product {
   productPrice: number;
   preparationTime: number;
   available: number;
+  discription: string;
 }
 
