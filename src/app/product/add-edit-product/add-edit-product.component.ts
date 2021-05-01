@@ -39,7 +39,8 @@ export class AddEditProductComponent implements OnInit {
       productName: ['', Validators.required],
       productPrice: ['', Validators.required],
       preparationTime: ['', Validators.required],
-      available: ['', Validators.required]
+      available: ['', Validators.required],
+      description: ['']
     });
 
     if (!this.isAddMode) {
@@ -68,7 +69,7 @@ export class AddEditProductComponent implements OnInit {
   }
 
   createProduct() {
-    const isAvailable: number = this.form.value.available + 0;
+    const isAvailable: number = this.form.value.available - 0;
     const product: Product = this.form.value;
     product.available = isAvailable;
     this.productService.addProduct(product)
