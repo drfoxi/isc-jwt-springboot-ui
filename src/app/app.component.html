@@ -5,6 +5,7 @@
        [routerLinkActiveOptions]="{exact: true}">Home</a>
     <a *ngIf="isAdmin" class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
     <a *ngIf="isAdmin" class="nav-item nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+    <a *ngIf="isAdmin" class="nav-item nav-link" routerLink="/cart" routerLinkActive="active">Cart</a>
     <a class="nav-item nav-link" (click)="logout()">Logout</a>
   </div>
 </nav>

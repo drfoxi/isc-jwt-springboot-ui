@@ -1,0 +1,33 @@
+<h1 style="margin-bottom: 3rem">Your Shopping Cart</h1>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th style="width: 30%">Name</th>
+    <th style="width: 20%">Price per Unit</th>
+    <th style="width: 20%">Quantity</th>
+    <th style="width: 20%">Total price</th>
+    <th style="width: 10%"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products">
+    <td>{{product.productName}}</td>
+    <td>{{product.productPrice}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.productPrice * product.quantity}} Rial</td>
+    <td style="white-space: nowrap">
+      <button (click)="deleteProduct(product.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="product.isDeleting">
+        <span *ngIf="product.isDeleting" class="spinner-border spinner-border-sm"></span>
+        <span *ngIf="!product.isDeleting">Delete</span>
+      </button>
+    </td>
+  </tr>
+  <tr *ngIf="!products">
+    <td colspan="4" class="text-center">
+      <span class="spinner-border spinner-border-lg align-center"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<a class="btn btn-sm btn-success mb-2" style="margin-top: 1rem" (click)="registerOrderClick()">Register Order</a>

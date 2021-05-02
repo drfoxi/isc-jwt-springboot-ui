@@ -1,4 +1,16 @@
-﻿<div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 1rem">
+﻿<div *ngIf=!hasProduct>
+  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+    <div class="card-header">Opps!</div>
+    <div class="card-body">
+      <h5 class="card-title">We are sorry...!</h5>
+      <p class="card-text">But there is no available product to buy...</p>
+      <button *ngIf="isAdmin" class="btn btn-primary" type="button" routerLink="/products">Manage Products</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 1rem">
   <div class="col" *ngFor="let product of products" style="margin-bottom: 1rem">
     <div class="card" style="height: 15rem">
       <div class="card-header">
@@ -6,9 +18,13 @@
       </div>
       <div class="card-body h-100" style="display: grid">
         <h5 class="card-title">{{product.productName}}</h5>
-        <p class="card-text">{{product.discription}}</p>
+        <p class="card-text">{{product.description}}</p>
         <div class="card-footer" style="height: 4rem">
-          <button class="btn btn-outline-success" type="button" id="{{product.id}}" (click)="openModal($event)">ADD TO CART</button>
+          <button class="btn btn-outline-success" type="button" id="{{product.id}}" (click)="addToCart($event)">ADD TO
+            CART
+          </button>
+          <button class="btn btn-outline-success" type="button" routerLink="/cart" style="margin-left: 1rem">SHOW CART
+          </button>
         </div>
       </div>
     </div>

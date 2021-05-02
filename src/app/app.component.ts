@@ -15,7 +15,12 @@ export class AppComponent {
       this.isAdmin = false;
     }
   }
+  message: string;
 
+  receiveMessage($event) {
+    this.message = $event;
+    console.log(this.message);
+  }
   logout() {
     this.accountService.logout();
   }
